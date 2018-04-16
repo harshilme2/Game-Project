@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - wall
-  - water
-  - crate
-  - exit
-  - spikes
+  - Weapon
+  - Ruby
+  - Diamond
+  - Gem
   layers:
   - Default
   - TransparentFX
@@ -19,14 +17,14 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - Foreground
-  - Spikes
-  - Crate
+  - Enemy
   - 
   - 
   - 
   - 
+  - 
+  - 
+  - Tile_Underwall
   - 
   - 
   - 
@@ -44,12 +42,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1597446823
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 3646755495
     locked: 0
