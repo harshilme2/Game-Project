@@ -80,7 +80,11 @@ public class PlayerController : MonoBehaviour {
 		bombs = 0;
 		keys  = 0;
 		UpdateHUD();
+<<<<<<< HEAD
         SetCountText();
+=======
+        
+>>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 	}
 
 	static int Sign(float number) {
@@ -143,7 +147,10 @@ public class PlayerController : MonoBehaviour {
 			}
 
 			
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 			if (Input.GetKeyDown(KeyCode.J)){
 				Attack();
 			}
@@ -204,6 +211,7 @@ public class PlayerController : MonoBehaviour {
             SetCountText();
         }
     }
+<<<<<<< HEAD
     void SetCountText()
     {
         gemText.text = "Count : " + count.ToString();
@@ -212,4 +220,7 @@ public class PlayerController : MonoBehaviour {
        //     winText.text = "Won";
       //  }
     }
+=======
+    
+>>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 }
