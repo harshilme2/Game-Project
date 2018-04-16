@@ -240,10 +240,7 @@
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\LoadNextScene.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-=======
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
     <Compile Include="Assets\Scripts\UILevelName.cs" />

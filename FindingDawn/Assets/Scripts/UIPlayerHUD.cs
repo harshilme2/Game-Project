@@ -7,10 +7,6 @@ public class UIPlayerHUD : MonoBehaviour {
 
 	public GameObject player;
 	public Text uiHP;
-<<<<<<< HEAD
-=======
-	public Text uiKeys;
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 	public Text uiBombs;
     public GameObject heart1;
 
@@ -20,11 +16,7 @@ public class UIPlayerHUD : MonoBehaviour {
 
 	public void UpdateHud(){
 
-<<<<<<< HEAD
 		var ply = player.GetComponent<PlayerManager>();
-=======
-		var ply = player.GetComponent<PlayerController>();
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 
 		uiHP.text =  "HP:\n";
 
@@ -40,30 +32,18 @@ public class UIPlayerHUD : MonoBehaviour {
 		}
 		uiHP.text += stringHP;
 
-<<<<<<< HEAD
 		
-=======
-		uiKeys.text = "Keys  x " + ply.keys;
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 		uiBombs.text= "Bombs x " + ply.bombs;
 
 		if (ply.playerNo == 1){
 
-<<<<<<< HEAD
 			
-=======
-			uiKeys.alignment = TextAnchor.UpperLeft;
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 			uiBombs.alignment = TextAnchor.UpperLeft;
 			uiHP.alignment = TextAnchor.UpperLeft;
 
 		} else if (ply.playerNo == 2){
 
-<<<<<<< HEAD
 			
-=======
-			uiKeys.alignment = TextAnchor.UpperRight;
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
 			uiBombs.alignment = TextAnchor.UpperRight;
 			uiHP.alignment = TextAnchor.UpperRight;
 

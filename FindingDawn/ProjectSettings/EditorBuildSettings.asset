@@ -6,24 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/menu.unity
-    guid: 8cab21a28af40134abfa125d2edcb464
+    path: Assets/_Scenes/Title.unity
+    guid: 3f44f005082a7c44eba225ca5e130210
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/_Scenes/Controls.unity
     guid: a69f9c4a335097f4b9f306409ce710dd
   - enabled: 1
     path: Assets/_Scenes/Level1.unity
     guid: 7f800f6857d769348810a70b0ef488a9
-=======
-    path: Assets/Scenes/scene.unity
-    guid: 2e27d3933af5a664bbf1b9ce01dbff7f
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
   - enabled: 1
-    path: Assets/Scenes/death.unity
-    guid: 42706b8573597b74aba44536b36f4532
+    path: Assets/_Scenes/Level2.unity
+    guid: d039b7089522b2d49969438a1e1a6ac1
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/_Scenes/Level3.unity
     guid: cc9f59d0047595b45a2029f5540f8185
   - enabled: 1
@@ -32,7 +26,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/End.unity
     guid: 05d5069c315f99a45926d317865ed292
-=======
-    path: Assets/Scenes/win.unity
-    guid: a8cb4543e1e5b584f8774cf36929baba
->>>>>>> 3861963047fcefb1dac5b4d60ed818fd64541e86
