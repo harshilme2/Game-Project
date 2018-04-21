@@ -32,5 +32,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-FindingDawn/Library/metadata/
-FindingDawn/Temp/
+FindingDawn/Library/metadata/*
+FindingDawn/Temp/*
