@@ -10,6 +10,7 @@ TagManager:
   - crate
   - exit
   - spikes
+  - life
   layers:
   - Default
   - TransparentFX

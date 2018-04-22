@@ -7,7 +7,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public float maxHealth;
 	public float health;
-    public GameObject heart1;
+    public GameObject heart;
+    public GameObject Life;
 	void Start () {
 		health = maxHealth;
 	}
@@ -21,14 +22,26 @@ public class PlayerHealth : MonoBehaviour {
 
         if (health == 80)
         {
-            heart1.SetActive(false);
+            heart.SetActive(false);
         }
         GameObject.Find("Player Panel").GetComponent<UIPlayerHUD>().UpdateHud();
 		StartCoroutine(GameObject.Find("Player Panel").GetComponent<UIPlayerHUD>().Flash(Color.red));
 
 	}
 
-	public void IncreaseMaxHealth(float newMaxHealth){
+    public void Heal(GameObject li ,float life)
+    {
+        if(!isAtMaxHealth())
+        { 
+            health += life;
+            Destroy(li);
+        
+            GameObject.Find("Player Panel").GetComponent<UIPlayerHUD>().UpdateHud();
+            StartCoroutine(GameObject.Find("Player Panel").GetComponent<UIPlayerHUD>().Flash(Color.green));
+        }
+    }
+
+    public void IncreaseMaxHealth(float newMaxHealth){
 		maxHealth = newMaxHealth;
 	}
 
@@ -47,7 +60,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void OnDeath(){
-		SceneManager.LoadScene(2); //load death scene
+		SceneManager.LoadScene("GameOverMan"); //load death scene
 	}
 
 	

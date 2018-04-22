@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
     public Sprite dodgeSprite;
 
     public float maxHealth;
-    private float health;
+    public float health;
 
     private Transform SlashAttack;
     public float slashDistance;
@@ -85,6 +85,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        print("Hello");
         _renderer = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -93,14 +94,14 @@ public class PlayerManager : MonoBehaviour
         defaultDrag = rb.drag;
 
         health = maxHealth;
-        SlashAttack = transform.Find("SlashArea");
-        SlashAttack.gameObject.SetActive(false);
+        //SlashAttack = transform.Find("SlashArea");
+        //SlashAttack.gameObject.SetActive(false);
 
         //temporal items
         bombs = 0;
         keys = 0;
         UpdateHUD();
-        SetCountText();
+        //SetCountText();
     }
 
     static int Sign(float number)
@@ -127,65 +128,11 @@ public class PlayerManager : MonoBehaviour
             spriteRenderer.sprite = dodgeSprite;
         }
 
-        if (!isDodging)
+        if(health <= 0)
         {
-
-            rb.velocity = Vector2.zero;
-
-            if (canMove)
-            {
-                if (Input.GetKey(KeyCode.A))
-                {
-                    rb.velocity += Vector2.left * speed;
-                    xDirection = xdir.left;
-                    direction = Vector2.left;
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    rb.velocity += Vector2.right * speed;
-                    xDirection = xdir.right;
-                    direction = Vector2.right;
-                }
-                else
-                {
-                    yDirection = ydir.none;
-                }
-
-                if (Input.GetKey(KeyCode.W))
-                {
-                    rb.velocity += Vector2.up * speed;
-                    yDirection = ydir.up;
-                    direction = Vector2.up;
-                }
-                else if (Input.GetKey(KeyCode.S))
-                {
-                    rb.velocity += Vector2.down * speed;
-                    yDirection = ydir.down;
-                    direction = Vector2.down;
-                }
-                else
-                {
-                    yDirection = ydir.none;
-                }
-
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    rb.velocity = new Vector2(Sign(rb.velocity.x), Sign(rb.velocity.y)) * dodgeForce;
-                    rb.drag = dodgeDrag;
-                    defaultBoxSize = boxCollider.size;
-                    //boxCollider.size = Vector2.zero;
-                    isDodging = true;
-
-                }
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                Attack();
-            }
+            //destroy
+            Destroy(this);
         }
-
 
         float horizontalSpeed = Input.GetAxis("Horizontal");
         float verticalSpeed = Input.GetAxis("Vertical");
@@ -254,12 +201,24 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject.name);
+        print(collision.gameObject.tag);
 
         if (collision.gameObject.tag == "Enemy")
         {
-
+            print(collision.gameObject.name);
+            Hurt(1);
         }
+        if (collision.gameObject.tag == "spikes")
+        {
+            print(collision.gameObject.name);
+            Hurt(1);
+        }
+        if (collision.gameObject.tag == "life")
+        {
+            print(collision.gameObject.name);
+            Heal(collision.gameObject, 1);
+        }
+
     }
 
     void Attack()
@@ -306,14 +265,24 @@ public class PlayerManager : MonoBehaviour
         hp.Hurt(dmg);
 
     }
-    void SetCountText()
+    public void Heal(GameObject obj, float life)
     {
-        gemText.text = "Count : " + count.ToString();
-        // if (count >= 18)
-        //   {
-        //     winText.text = "Won";
-        //  }
+        // health -= dmg;
+        // if (health < 0) health = 0;
+        // print("Health is:" + health);
+
+        var hp = GetComponent<PlayerHealth>();
+        hp.Heal(obj, life);
+
     }
+    //void SetCountText()
+    //{
+    //    gemText.text = "Count : " + count.ToString();
+    //    // if (count >= 18)
+    //    //   {
+    //    //     winText.text = "Won";
+    //    //  }
+    //}
 
 
 }

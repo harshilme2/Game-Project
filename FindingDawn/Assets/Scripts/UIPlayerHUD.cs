@@ -33,7 +33,7 @@ public class UIPlayerHUD : MonoBehaviour {
 		uiHP.text += stringHP;
 
 		
-		uiBombs.text= "Bombs x " + ply.bombs;
+		uiBombs.text= "Score : " + ply.bombs;
 
 		if (ply.playerNo == 1){
 

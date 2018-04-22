@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour {
@@ -16,5 +17,10 @@ public class TimeManager : MonoBehaviour {
 	void Update () {
         startTimer -= Time.deltaTime;
         theText.text = "Time: " + Mathf.Round(startTimer);
+
+        if(startTimer <= 0)
+        {
+            SceneManager.LoadScene("GameOverMan");
+        }
 	}
 }

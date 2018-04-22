@@ -50,4 +50,15 @@ public class EnemyManager : MonoBehaviour
             transform.Translate(Vector3.up * speed * Time.deltaTime);        }
         currentPos = transform.position;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print(collision.gameObject.name);
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            //print(collision.gameObject.name);
+            //Hurt(1);
+        }
+
+    }
 }

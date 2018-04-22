@@ -237,6 +237,7 @@
     <Compile Include="Assets\Dungeon Art Pack\AnimateSprite.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CameraScriptUnclamped.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealthManager.cs" />
     <Compile Include="Assets\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\LoadNextScene.cs" />

@@ -961,6 +961,16 @@ Prefab:
       propertyPath: speed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114168834357932656, guid: 9347c80bd2dc143398cb50837b5d5ca0,
+        type: 2}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114168834357932656, guid: 9347c80bd2dc143398cb50837b5d5ca0,
+        type: 2}
+      propertyPath: health
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9347c80bd2dc143398cb50837b5d5ca0, type: 2}
   m_IsPrefabParent: 0
@@ -1926,6 +1936,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 520969095}
+  - component: {fileID: 520969096}
   m_Layer: 0
   m_Name: Boulders
   m_TagString: Untagged
@@ -1970,6 +1981,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &520969096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520969094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &534619129
 Prefab:
   m_ObjectHideFlags: 0
@@ -15576,6 +15599,21 @@ GameObject:
   m_PrefabParentObject: {fileID: 1223284227297686, guid: 9347c80bd2dc143398cb50837b5d5ca0,
     type: 2}
   m_PrefabInternal: {fileID: 254374785}
+--- !u!114 &579355575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579355569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337e5e67a8d4a3d4ebf526c3113176f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  health: 4
+  heart: {fileID: 1905150163}
+  Life: {fileID: 1625106148410952, guid: 8e469d4b03e20ab4aab3eb19faea7cab, type: 2}
 --- !u!1001 &581607470
 Prefab:
   m_ObjectHideFlags: 0
@@ -17181,7 +17219,7 @@ GameObject:
   - component: {fileID: 1170441914}
   - component: {fileID: 1170441913}
   m_Layer: 5
-  m_Name: uiBombs
+  m_Name: uiScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17239,7 +17277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bombs x 0
+  m_Text: 'Score : 0'
 --- !u!222 &1170441914
 CanvasRenderer:
   m_ObjectHideFlags: 0
