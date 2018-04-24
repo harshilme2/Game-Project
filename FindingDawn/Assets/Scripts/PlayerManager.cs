@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour
     public int playerNo = 1;
     private Vector2 direction;
 
+    public GameObject TimeBoost;
+    public GameObject Weapon;
+
     [Header("Movement")]
     [Range(1, 20)]
     public float speed;
@@ -83,6 +86,8 @@ public class PlayerManager : MonoBehaviour
     private Vector2 offset;
     private bool canWalk;
 
+    private bool left, right, up, down;
+
     private void Start()
     {
         print("Hello");
@@ -90,7 +95,7 @@ public class PlayerManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
-
+        
         defaultDrag = rb.drag;
 
         health = maxHealth;
@@ -102,6 +107,9 @@ public class PlayerManager : MonoBehaviour
         keys = 0;
         UpdateHUD();
         //SetCountText();
+
+        down = true;
+
     }
 
     static int Sign(float number)
@@ -144,30 +152,48 @@ public class PlayerManager : MonoBehaviour
         {
             transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
             transform.Translate(Vector3.down * horizontalSpeed * Time.deltaTime * speed);
+            Reset();
+            right = true;
+           
         }
         else if (horizontalSpeed < 0)
         {
             transform.rotation = Quaternion.AngleAxis(-90, Vector3.forward);
             transform.Translate(Vector3.up * horizontalSpeed * Time.deltaTime * speed);
+            Reset();
+            left = true;
         }
         else if (verticalSpeed > 0)
         {
             transform.rotation = Quaternion.AngleAxis(180, Vector3.forward);
             transform.Translate(Vector3.down * verticalSpeed * Time.deltaTime * speed);
+            Reset();
+            up = true;
         }
         else if (verticalSpeed < 0)
         {
             transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
             transform.Translate(Vector3.up * verticalSpeed * Time.deltaTime * speed);
+            Reset();
+            down = true;
         }
 
         SetSpriteAnimation(colCount, rowCount, rowNumber, colNumber, totalCells, fps);
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
         }
+        
     }
 
+    private void Reset()
+    {
+
+        left = false;
+        right = false;
+        up = false;
+        down = false;
+    }
     //SetSpriteAnimation
     void SetSpriteAnimation(int colCount, int rowCount, int rowNumber, int colNumber, int totalCells, int fps)
     {
@@ -201,9 +227,28 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject.tag);
+        //print(collision.gameObject.tag);
+  
+        if (collision.gameObject.tag == "time")
+        {
+            StartCoroutine(GameObject.Find("txtTime").GetComponent<TimeManager>().Flash(Color.blue));
+            Destroy(collision.gameObject);
+            AddTime();
+        }
+        if (collision.gameObject.tag == "megatime")
+        {
+            StartCoroutine(GameObject.Find("txtTime").GetComponent<TimeManager>().Flash(Color.blue));
+            Destroy(collision.gameObject);
+            AddTime();
+        }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "speedup")
+        {
+            speed += 1;
+            Destroy(collision.gameObject);
+        }
+
+            if (collision.gameObject.tag == "Enemy")
         {
             print(collision.gameObject.name);
             Hurt(1);
@@ -223,11 +268,22 @@ public class PlayerManager : MonoBehaviour
 
     void Attack()
     {
-        var atk = SlashAttack;
-        atk.gameObject.SetActive(true);
-        float atkPosX = 0;
-        float atkPosY = 0;
-        float atkDis = slashDistance;
+        GameObject obj = Instantiate(Weapon, this.transform.position, Quaternion.identity);
+        if(right)
+            obj.GetComponent<WeaponScript>().direction = Vector3.right;
+        else if (left)
+            obj.GetComponent<WeaponScript>().direction = Vector3.left;
+        else if (down)
+            obj.GetComponent<WeaponScript>().direction = Vector3.down;
+        else if (up)
+            obj.GetComponent<WeaponScript>().direction = Vector3.up;
+        //print(down);
+        //print(obj.GetComponent<WeaponScript>().direction);
+        //var atk = SlashAttack;
+        //atk.gameObject.SetActive(true);
+        //float atkPosX = 0;
+        //float atkPosY = 0;
+        //float atkDis = slashDistance;
         //atk.transform.localPosition = Vector2.zero;
         // if(xDirection == xdir.right){
         // 	atkPosX =  atkDis;
@@ -240,8 +296,8 @@ public class PlayerManager : MonoBehaviour
         // 	atkPosY = -atkDis;
         // }
 
-        atk.transform.localPosition = (direction.normalized * atkDis);
-        StartCoroutine(hideAtack(atk.gameObject));
+        //atk.transform.localPosition = (direction.normalized * atkDis);
+        //StartCoroutine(hideAtack(atk.gameObject));
 
     }
     private IEnumerator hideAtack(GameObject atk)
@@ -255,14 +311,26 @@ public class PlayerManager : MonoBehaviour
     {
         GameObject.Find("Player Panel").GetComponent<UIPlayerHUD>().UpdateHud();
     }
+
+    public void AddTime()
+    {
+        var t1 = TimeBoost.GetComponent<TimeManager>();
+        //t1.startTimer += 10;
+        t1.AddTime();
+    }
     public void Hurt(float dmg)
     {
         // health -= dmg;
         // if (health < 0) health = 0;
         // print("Health is:" + health);
 
-        var hp = GetComponent<PlayerHealth>();
+        var hp =GetComponent<PlayerHealth>();
         hp.Hurt(dmg);
+
+    }
+
+    public void AddScore()
+    {
 
     }
     public void Heal(GameObject obj, float life)

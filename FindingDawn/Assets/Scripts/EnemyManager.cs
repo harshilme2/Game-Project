@@ -52,10 +52,11 @@ public class EnemyManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "weapon")
         {
+            
             //print(collision.gameObject.name);
             //Hurt(1);
         }
