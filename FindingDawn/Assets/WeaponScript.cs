@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
-
+    public GameObject EnemyPoof;
+    private GameObject des;
     public Vector3 direction { get; set; }
     // Use this for initialization
     void Start()
@@ -28,8 +29,12 @@ public class WeaponScript : MonoBehaviour
             //print("Asd" + collision.gameObject.tag);
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+            des = Instantiate(EnemyPoof, this.transform.position, Quaternion.identity);
+            Destroy(des, 1f);
 
-        }else if (collision.gameObject.tag == "Player")
+
+        }
+        else if (collision.gameObject.tag == "Player")
         {
 
         }
@@ -39,4 +44,5 @@ public class WeaponScript : MonoBehaviour
         
 
     }
+
 }

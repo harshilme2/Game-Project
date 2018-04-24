@@ -228,7 +228,7 @@ public class PlayerManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //print(collision.gameObject.tag);
-  
+        
         if (collision.gameObject.tag == "time")
         {
             StartCoroutine(GameObject.Find("txtTime").GetComponent<TimeManager>().Flash(Color.blue));
