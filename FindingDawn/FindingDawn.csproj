@@ -245,8 +245,10 @@
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\TimeManager.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseController_NoMusic.cs" />
     <Compile Include="Assets\Scripts\UILevelName.cs" />
     <Compile Include="Assets\Scripts\UIPlayerHUD.cs" />
+    <Compile Include="Assets\WeaponScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dungeon Art Pack\Images\barrels-1.0-2\CHANGES.txt" />

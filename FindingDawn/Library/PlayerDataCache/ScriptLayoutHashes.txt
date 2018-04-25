@@ -1,6 +1,6 @@
-WindowsStandalone
+WebGL
 PlayerPath?
-C:/Users/Harshil/Desktop/Sem 6/COMP305 - Game/Project/Game---Project/Game V.1.exe
+C:/Users/Harshil/Desktop/Sem 6/COMP305 - Game/Project/FindingDawn/0.7
 SceneListBegin?
 Assets/_Scenes/Title.unity
 Assets/_Scenes/Controls.unity
@@ -115,17 +115,19 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WeaponScript
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PauseController_NoMusic
 2b009ed5d45af70a9e9cd9186acb7db5 Assembly-CSharp.dll:.LoadNextScene
 2b009ed5d45af70a9e9cd9186acb7db5 Assembly-CSharp.dll:.LevelTransition
 55aa665f7c7beee986f4d601df8ab611 Assembly-CSharp.dll:.EnemyManager
 a8fca2ed9e6b2c793cf889089ff2532f Assembly-CSharp.dll:.UILevelName
 d989169f566b9be7a2c279ebafd92fc9 Assembly-CSharp.dll:.PlayerHealth
-f927bd8a895c03acde6056ed8cb63316 Assembly-CSharp.dll:.PlayerManager
+81e228489f19010d9e77ec6c6b3557f1 Assembly-CSharp.dll:.PlayerManager
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 74654c4e30bc553981a806087d5598c5 Assembly-CSharp.dll:.CameraScriptUnclamped
@@ -155,7 +157,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
-6dc0a5b57b5521615c3ed93f5f05fee8 Assembly-CSharp.dll:.TimeManager
+2bb4f1c38426dcedb293cd646fb99d94 Assembly-CSharp.dll:.TimeManager
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule

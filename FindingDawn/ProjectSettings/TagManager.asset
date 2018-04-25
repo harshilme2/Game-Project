@@ -11,6 +11,13 @@ TagManager:
   - exit
   - spikes
   - life
+  - time
+  - speedup
+  - megatime
+  - ring
+  - weapon
+  - WeaponBoost
+  - enemypoof
   layers:
   - Default
   - TransparentFX
