@@ -369,7 +369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -59.999973}
+  m_AnchoredPosition: {x: 60, y: -59.99997}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1003878650
@@ -785,6 +785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: Controls
+  Level: {fileID: 1381752937569098, guid: 3fa5c6b24ca7ddc4c81dae3d736df0e6, type: 2}
+  Text: 
 --- !u!1 &2046165039
 GameObject:
   m_ObjectHideFlags: 0

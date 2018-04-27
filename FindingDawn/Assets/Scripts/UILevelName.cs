@@ -20,6 +20,10 @@ public class UILevelName : MonoBehaviour {
 	public void UpdateName(int level){
 		Text.text = "Level " + level.ToString();
 	}
+    public string GetName()
+    {
+        return Text.text;
+    }
 
 	
 }

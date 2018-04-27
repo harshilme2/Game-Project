@@ -15,7 +15,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void Hurt(float dmg){
 		health -= dmg;
-		if (health < 0){
+
+		if (health <= 0){
 			health = 0;
 			OnDeath();
 		}

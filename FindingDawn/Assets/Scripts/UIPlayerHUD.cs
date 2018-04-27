@@ -22,6 +22,7 @@ public class UIPlayerHUD : MonoBehaviour {
 
 		var hp = player.GetComponent<PlayerHealth>();
 		string stringHP = "";
+        //print(hp.health);
 		for(var i = 0; i < hp.maxHealth; i++){
 			if (i+1 <= hp.health){
 				stringHP += "*";

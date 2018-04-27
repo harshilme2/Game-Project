@@ -18,6 +18,7 @@ TagManager:
   - weapon
   - WeaponBoost
   - enemypoof
+  - GiantBats
   layers:
   - Default
   - TransparentFX

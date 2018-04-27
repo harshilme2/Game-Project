@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     private Vector2 direction;
 
     public GameObject TimeBoost;
+    public GameObject Score;
     public GameObject Weapon;
 
     [Header("Movement")]
@@ -90,7 +91,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        print("Hello");
+        //print("Hello");
         _renderer = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -250,17 +251,23 @@ public class PlayerManager : MonoBehaviour
 
             if (collision.gameObject.tag == "Enemy")
         {
-            print(collision.gameObject.name);
+            //print(collision.gameObject.name);
             Hurt(1);
+        }
+
+        if (collision.gameObject.tag == "GiantBats")
+        {
+            //print(collision.gameObject.name);
+            Hurt(3);
         }
         if (collision.gameObject.tag == "spikes")
         {
-            print(collision.gameObject.name);
+            //print(collision.gameObject.name);
             Hurt(1);
         }
         if (collision.gameObject.tag == "life")
         {
-            print(collision.gameObject.name);
+            //print(collision.gameObject.name);
             Heal(collision.gameObject, 1);
         }
 
@@ -318,6 +325,13 @@ public class PlayerManager : MonoBehaviour
         //t1.startTimer += 10;
         t1.AddTime();
     }
+
+    public void AddScore()
+    {
+        var t1 = Score.GetComponent<ScoreManager>();
+        //t1.startTimer += 10;
+        t1.AddScore();
+    }
     public void Hurt(float dmg)
     {
         // health -= dmg;
@@ -329,10 +343,7 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public void AddScore()
-    {
-
-    }
+   
     public void Heal(GameObject obj, float life)
     {
         // health -= dmg;

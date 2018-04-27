@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPoof: {fileID: 1477488040349960, guid: 74e5718421a1a3142a4a9e2a66f30128, type: 2}
+  HitSound: {fileID: 1819435389873458, guid: afaacdd4fed3fc84dbcaeab23900f450, type: 2}
+  ThrowSound: {fileID: 1825360819775514, guid: 473a6b04b5c40424aac44290124c5e72, type: 2}
 --- !u!212 &212308304221853004
 SpriteRenderer:
   m_ObjectHideFlags: 1
